@@ -14,7 +14,7 @@ body {
 }
 
 .app-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: auto;
 }
 .header {
@@ -29,7 +29,11 @@ body {
   background-color: white;
   padding: 0.7em;
   border-radius: 10px;
+  box-shadow: inset 1.25rem 0.625rem 1.25rem 0.625rem #fefefe;
+
+  /*
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  */
 }
 
 .inner-left-search {
@@ -71,23 +75,21 @@ button:hover {
   display: flex;
   gap: 1em;
   border-radius: 10px;
-  border: 1px solid red;
+  box-shadow: inset 1.25rem 0.625rem 1.25rem 0.625rem #fefefe;
 }
 .profile-pic img {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   border: 1px solid rgb(83, 79, 79);
 }
 .sub-container {
-  border: 1px solid gray;
   width: 100%;
 }
 .name-date {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid red;
   width: 100%;
 }
 .user-account-info {
@@ -99,7 +101,8 @@ button:hover {
   border-radius: 10px;
 }
 strong {
-  font-weight: 800;
+  font-weight: bolder;
+  font-size: 26px;
 }
 .user-details {
   margin-top: 1.5em;

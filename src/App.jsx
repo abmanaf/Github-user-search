@@ -17,7 +17,7 @@ function App() {
           </div>
           <div className='sub-container'>
             <div className='name-date'>
-              <span>{user.name || "No Name Available"}</span>
+              <span style={{fontSize: '2em', fontWeight: 'bolder'}}>{user.name || "No Name Available"}</span>
               <span>Joined {new Date(user.created_at).toLocaleDateString('en-GB',
                 {
                   day: 'numeric',
@@ -26,8 +26,8 @@ function App() {
                 }
               )}</span>
             </div>
-            <span>@{user.login}</span>
-            <p>{user.bio || "This user has no bio."}</p>
+            <span style={{color: 'hsl(221, 74%, 47%)'}}>@{user.login}</span>
+            <p style={{marginTop: '2em'}}>{user.bio || "This user has no bio"}</p> 
             <div className='user-account-info'>
               <span>Repos <br /> <strong>{user.public_repos}</strong> </span>
               <span>Followers <br /> <strong>{user.followers}</strong> </span>

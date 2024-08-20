@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+:root {
+  --blue-see: hsl(221, 74%, 57%);
+  --light-cyan: #f5f7ff;
+}
+
+body {
+  margin: 5em 15em;
+  background-color: var(--light-cyan);
+}
+
+.app-container {
+  max-width: 700px;
+  margin: auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0.7em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inner-left-search {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  border: none;
+  margin-left: 1em;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+input:focus {
+  border: none;
+}
+
+button {
+  padding: 0.8em 2em;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: var(--blue-see);
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: hsl(221, 74%, 47%);
+}
+.main-container {
+  background-color: white;
+  margin-top: 2em;
+  padding: 2em;
+  display: flex;
+  gap: 1em;
+  border-radius: 10px;
+  border: 1px solid red;
+}
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid rgb(83, 79, 79);
+}
+.sub-container {
+  border: 1px solid gray;
+  width: 100%;
+}
+.name-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid red;
+  width: 100%;
+}
+.user-account-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.2em;
+  margin-top: 2em;
+  background-color: var(--light-cyan);
+  border-radius: 10px;
+}
+strong {
+  font-weight: 800;
+}
+.user-details {
+  margin-top: 1.5em;
+}
+.user-details .location-twitter {
+  display: flex;
+  justify-content: space-between;
+}
+.user-details .website-company {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5em;
+}

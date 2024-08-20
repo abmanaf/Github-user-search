@@ -1,9 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Header from './Component/Header/Header';
+import SearchBar from './Component/SearchBar/SearchBar';
+import './App.css';
 
 function App() {
+  const [user, setUser] = useState(null); // State to hold user data
+
   return (
-    <div>Application</div>
-  )
+    <div className='app-container'>
+      <Header />
+      <SearchBar setUser={setUser} />
+      {user && ( //We are rendering user info only if user data is available
+        <div className='main-container'>
+          <div className='profile-pic'>
+            <img src={user.avatar_url} alt="profile" />
+          </div>
+          <div className='sub-container'>
+            <div className='name-date'>
+              <span>{user.name || "No Name Available"}</span>
+              <span>Joined {new Date(user.created_at).toLocaleDateString('en-GB',
+                {
+                  day: 'numeric',
+                  month: 'short',
+                  year: 'numeric'
+                }
+              )}</span>
+            </div>
+            <span>@{user.login}</span>
+            <p>{user.bio || "This user has no bio."}</p>
+            <div className='user-account-info'>
+              <span>Repos <br /> <strong>{user.public_repos}</strong> </span>
+              <span>Followers <br /> <strong>{user.followers}</strong> </span>
+              <span>Following <br /> <strong>{user.following}</strong> </span>
+            </div>
+            <div className='user-details'>
+              <div className='location-twitter'>
+                <span><img src="/src/assets/images/icon-location.svg" alt="icon-location" /> {user.location || "Not Available"}</span>
+                <span><img src="/src/assets/images/icon-twitter.svg" alt="icon-twitter" /> {user.twitter_username ? `@${user.twitter_username}` : "Not Available"}</span>
+              </div>
+              <div className='website-company'>
+                <span><img src="/src/assets/images/icon-website.svg" alt="icon-website" /> <a href={user.blog || "#"}>{user.blog || "Not Available"}</a></span>
+                <span><img src="/src/assets/images/icon-company.svg" alt="icon-company" /> {user.company || "Not Available"}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;

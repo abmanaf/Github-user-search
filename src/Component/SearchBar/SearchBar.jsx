@@ -1,20 +1,25 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 function SearchBar({ setUser }) { 
-    const [searchTerm, setSearchTerm] = useState("");
+    const [searchTerm, setSearchTerm] = useState("octocat");
 
-    const handleSearch = async () => {
-        if (searchTerm.trim()) {
+    const handleSearch = async (username) => {
+        const userToSearch = username || searchTerm;
+        if (userToSearch) {
             try {
                 const response = await axios.get(`https://api.github.com/users/${searchTerm}`);
                 setUser(response.data);
             } catch (err) {
-                console.error(err);
-                setUser(null); 
+                console.error("err");
+                alert('user does not exist')
+                setUser(octocat); 
             }
         }
     };
+    useEffect(() => {
+        handleSearch("octocat");
+      }, []);
 
     return (
         <div className='search-bar'>

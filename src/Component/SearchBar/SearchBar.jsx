@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React, { useState,useEffect } from 'react';
+//import { useContext } from 'react';
+//import ThemeContext from '../ThemeContext';
 
 function SearchBar({ setUser }) { 
     const [searchTerm, setSearchTerm] = useState("octocat");
+    //const {theme} = useContext(ThemeContext)
 
     const handleSearch = async (username) => {
         const userToSearch = username || searchTerm;

@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../ThemeContext';
 
 function Header() {
+  const { theme, changeTheme } = useContext(ThemeContext);
+  
   return (
     <div className='header'>
       <h2>devfinder</h2>
-      <img src="/src/assets/images/icon-moon.svg" alt="Theme Toggle Icon" />
+      <div className='color' style={{display: "flex", gap: '2em'}}>
+        <span>{theme === "light" ? "DARK" : "LIGHT"}</span>
+    <img 
+      onClick={changeTheme}
+        src={theme === "light" ? "/src/assets/images/icon-moon.svg" : "/src/assets/images/icon-sun.svg"} 
+        alt="Theme Toggle Icon" 
+      />
+      </div>
     </div>
   );
 }

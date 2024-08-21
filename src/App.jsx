@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import Header from './Component/Header/Header';
 import SearchBar from './Component/SearchBar/SearchBar';
 import './App.css';
+import { ThemeProvider } from './Component/ThemeContext';
 
 function App() {
-  const [user, setUser] = useState(null); // State to hold user data
+  const [user, setUser] = useState(null);
 
   return (
+    <ThemeProvider>
     <div className='app-container'>
       <Header />
       <SearchBar setUser={setUser} />
@@ -47,6 +49,7 @@ function App() {
         </div>
       )}
     </div>
+    </ThemeProvider>
   );
 }
 

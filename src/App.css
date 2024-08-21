@@ -6,34 +6,62 @@
 :root {
   --blue-see: hsl(221, 74%, 57%);
   --light-cyan: #f5f7ff;
+  --dark-bg: #141d2f;
+  --dark-inner-bg: #222e47;
+  --dark-text: #fff;
+  --light-bg: #f5f7ff;
+  --light-text: #000;
+}
+
+body.light {
+  --background-color: var(--light-bg);
+  --text-color: var(--light-text);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body.dark {
+  --background-color: var(--dark-bg);
+  --text-color: var(--dark-text);
+  --search-bar-bg: var(--dark-search-bar-bg);
+  --main-bg: var(--dark-main-bg);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 body {
   margin: 5em 15em;
-  background-color: var(--light-cyan);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .app-container {
   max-width: 800px;
   margin: auto;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+.color img {
+  cursor: pointer;
+}
+
 .search-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: var(--light-bg);
   padding: 0.7em;
   border-radius: 10px;
   box-shadow: inset 1.25rem 0.625rem 1.25rem 0.625rem #fefefe;
+}
 
-  /*
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  */
+body.dark .search-bar {
+  background-color: var(--dark-inner-bg);
+  box-shadow: none;
 }
 
 .inner-left-search {
@@ -48,13 +76,14 @@ input {
   width: 100%;
   font-size: 16px;
   line-height: 1.5;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+body.dark input {
+  background-color: var(--dark-inner-bg);
 }
 
-input:focus {
-  border: none;
-}
-
-button {
+.search-bar button {
   padding: 0.8em 2em;
   border: none;
   cursor: pointer;
@@ -65,9 +94,10 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.search-bar button:hover {
   background-color: hsl(221, 74%, 47%);
 }
+
 .main-container {
   background-color: white;
   margin-top: 2em;
@@ -77,21 +107,31 @@ button:hover {
   border-radius: 10px;
   box-shadow: inset 1.25rem 0.625rem 1.25rem 0.625rem #fefefe;
 }
+
+body.dark .main-container {
+  background-color: var(--dark-inner-bg);
+  color: var(--text-color);
+  box-shadow: none;
+}
+
 .profile-pic img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   border: 1px solid rgb(83, 79, 79);
 }
+
 .sub-container {
   width: 100%;
 }
+
 .name-date {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
+
 .user-account-info {
   display: flex;
   justify-content: space-around;
@@ -100,17 +140,24 @@ button:hover {
   background-color: var(--light-cyan);
   border-radius: 10px;
 }
+body.dark .user-account-info {
+  background-color: #000;
+}
+
 strong {
   font-weight: bolder;
   font-size: 26px;
 }
+
 .user-details {
   margin-top: 1.5em;
 }
+
 .user-details .location-twitter {
   display: flex;
   justify-content: space-between;
 }
+
 .user-details .website-company {
   display: flex;
   justify-content: space-between;

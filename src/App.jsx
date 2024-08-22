@@ -13,13 +13,17 @@ function App() {
       <Header />
       <SearchBar setUser={setUser} />
       {user && ( //We are rendering user info only if user data is available
-        <div className='main-container'>
+        <div className='container' >
+          <div className='main-container'>
           <div className='profile-pic'>
             <img src={user.avatar_url} alt="profile" />
           </div>
           <div className='sub-container'>
             <div className='name-date'>
-              <span style={{fontSize: '2em', fontWeight: 'bolder'}}>{user.name || "No Name Available"}</span>
+              <div>
+              <span className='name' style={{fontWeight: 'bolder'}}>{user.name || "No Name Available"}</span> <br />
+              <span style={{color: 'hsl(221, 74%, 47%)'}}>@{user.login}</span>
+              </div>
               <span>Joined {new Date(user.created_at).toLocaleDateString('en-GB',
                 {
                   day: 'numeric',
@@ -28,14 +32,19 @@ function App() {
                 }
               )}</span>
             </div>
-            <span style={{color: 'hsl(221, 74%, 47%)'}}>@{user.login}</span>
-            <p style={{marginTop: '2em'}}>{user.bio || "This user has no bio"}</p> 
-            <div className='user-account-info'>
-              <span>Repos <br /> <strong>{user.public_repos}</strong> </span>
-              <span>Followers <br /> <strong>{user.followers}</strong> </span>
-              <span>Following <br /> <strong>{user.following}</strong> </span>
             </div>
-            <div className='user-details'>
+          </div>
+          <div className='hey'>
+            <div>
+          <p style={{marginTop: '2em'}}>{user.bio || "This user has no bio"}</p> 
+          
+      <div className='user-account-info'>
+        
+        <span>Repos <br /> <strong>{user.public_repos}</strong> </span>
+        <span>Followers <br /> <strong>{user.followers}</strong> </span>
+        <span>Following <br /> <strong>{user.following}</strong> </span>
+      </div>
+      <div className='user-details'>
               <div className='location-twitter'>
                 <span><img src="/src/assets/images/icon-location.svg" alt="icon-location" /> {user.location || "Not Available"}</span>
                 <span><img src="/src/assets/images/icon-twitter.svg" alt="icon-twitter" /> {user.twitter_username ? `@${user.twitter_username}` : "Not Available"}</span>
@@ -45,9 +54,13 @@ function App() {
                 <span><img src="/src/assets/images/icon-company.svg" alt="icon-company" /> {user.company || "Not Available"}</span>
               </div>
             </div>
-          </div>
+            </div>
+            </div>
+
         </div>
       )}
+
+           
     </div>
     </ThemeProvider>
   );

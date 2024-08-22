@@ -7,6 +7,7 @@ import { ThemeProvider } from './Component/ThemeContext';
 function App() {
   const [user, setUser] = useState(null);
 
+  
   return (
     <ThemeProvider>
     <div className='app-container'>

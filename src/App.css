@@ -136,8 +136,7 @@ body.dark .container {
   font-size: 2em;
 }
 .hey {
-  border: 1px solid red;
-  display: flex;
+  width: 100%;
 }
 .user-account-info {
   display: flex;
@@ -188,7 +187,49 @@ body.dark .user-details img {
 body.dark .user-details a {
   color: white;
 }
-@media only screen and (max-width: 500px) {
+
+@media only screen and (max-width: 320px) {
+  body {
+    margin: 0.1em;
+  }
+  .container {
+    padding: 0.2em;
+  }
+  .main-container {
+    display: flex;
+    gap: 1em;
+    border-radius: 10px;
+  }
+  .name-date {
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+  .profile-pic img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid rgb(83, 79, 79);
+  }
+
+  .user-details {
+    margin-top: 1.5em;
+    font-size: 16px;
+  }
+
+  .location-twitter span,
+  .website-company span {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 500px) {
   body {
     margin: 0.5em;
   }
@@ -203,6 +244,54 @@ body.dark .user-details a {
   .name-date {
     flex-direction: column;
     justify-content: stretch;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+  .profile-pic img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid rgb(83, 79, 79);
+  }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 768px) {
+  body {
+    margin: 2em;
+  }
+  .container {
+    padding: 1em;
+  }
+  .main-container {
+    display: flex;
+    gap: 1em;
+    border-radius: 10px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+  .profile-pic img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid rgb(83, 79, 79);
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    margin: 2em;
+  }
+  .container {
+    padding: 1em;
+  }
+  .main-container {
+    display: flex;
+    gap: 1em;
+    border-radius: 10px;
   }
 
   .name {

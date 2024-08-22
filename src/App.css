@@ -30,7 +30,7 @@ body.dark {
 }
 
 body {
-  margin: 5em 15em;
+  margin: 3em 15em;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -97,18 +97,20 @@ body.dark input {
 .search-bar button:hover {
   background-color: hsl(221, 74%, 47%);
 }
-
-.main-container {
+.container {
   background-color: white;
   margin-top: 2em;
   padding: 2em;
-  display: flex;
-  gap: 1em;
   border-radius: 10px;
+
   box-shadow: inset 1.25rem 0.625rem 1.25rem 0.625rem #fefefe;
 }
+.main-container {
+  display: flex;
+  gap: 1em;
+}
 
-body.dark .main-container {
+body.dark .container {
   background-color: var(--dark-inner-bg);
   color: var(--text-color);
   box-shadow: none;
@@ -127,11 +129,16 @@ body.dark .main-container {
 
 .name-date {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
-
+.name {
+  font-size: 2em;
+}
+.hey {
+  border: 1px solid red;
+  display: flex;
+}
 .user-account-info {
   display: flex;
   justify-content: space-around;
@@ -156,10 +163,55 @@ strong {
 .user-details .location-twitter {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .user-details .website-company {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 1.5em;
+}
+.location-twitter span,
+.website-company span {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+body.dark .user-details img {
+  filter: brightness(0) invert(1);
+}
+.user-details a {
+  text-decoration: none;
+  color: #000;
+}
+body.dark .user-details a {
+  color: white;
+}
+@media only screen and (max-width: 500px) {
+  body {
+    margin: 0.5em;
+  }
+  .container {
+    padding: 1em;
+  }
+  .main-container {
+    display: flex;
+    gap: 1em;
+    border-radius: 10px;
+  }
+  .name-date {
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+  .profile-pic img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid rgb(83, 79, 79);
+  }
 }

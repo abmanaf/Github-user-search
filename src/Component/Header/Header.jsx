@@ -11,7 +11,7 @@ function Header() {
         <span>{theme === "light" ? "DARK" : "LIGHT"}</span>
     <img 
       onClick={changeTheme}
-        src={theme === "light" ? "/src/assets/images/icon-moon.svg" : "/src/assets/images/icon-sun.svg"} 
+        src={theme === "light" ? "../assets/images/icon-moon.svg" : "../assets/images/icon-sun.svg"} 
         alt="Theme Toggle Icon" 
       />
       </div>

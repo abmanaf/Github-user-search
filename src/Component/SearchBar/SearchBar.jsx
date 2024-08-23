@@ -28,7 +28,7 @@ function SearchBar({ setUser }) {
         <div className='search-bar'>
             <div className='inner-left-search'>
                 <div>
-                    <img src="/src/assets/images/icon-search.svg" alt="Search Icon" />
+                    <img src="../assets/images/icon-search.svg" alt="Search Icon" />
                 </div>
                 <div className='inner-right-search'>
                     <input 

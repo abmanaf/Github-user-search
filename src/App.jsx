@@ -47,12 +47,12 @@ function App() {
       </div>
       <div className='user-details'>
               <div className='location-twitter'>
-                <span><img src="/src/assets/images/icon-location.svg" alt="icon-location" /> {user.location || "Not Available"}</span>
-                <span><img src="/src/assets/images/icon-twitter.svg" alt="icon-twitter" /> {user.twitter_username ? `@${user.twitter_username}` : "Not Available"}</span>
+                <span><img src="../assets/images/icon-location.svg" alt="icon-location" /> {user.location || "Not Available"}</span>
+                <span><img src="../assets/images/icon-twitter.svg" alt="icon-twitter" /> {user.twitter_username ? `@${user.twitter_username}` : "Not Available"}</span>
               </div>
               <div className='website-company'>
-                <span><img src="/src/assets/images/icon-website.svg" alt="icon-website" /> <a href={user.blog || "#"}>{user.blog || "Not Available"}</a></span>
-                <span><img src="/src/assets/images/icon-company.svg" alt="icon-company" /> {user.company || "Not Available"}</span>
+                <span><img src="../assets/images/icon-website.svg" alt="icon-website" /> <a href={user.blog || "#"}>{user.blog || "Not Available"}</a></span>
+                <span><img src="../assets/images/icon-company.svg" alt="icon-company" /> {user.company || "Not Available"}</span>
               </div>
             </div>
             </div>

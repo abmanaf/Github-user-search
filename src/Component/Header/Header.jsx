@@ -4,6 +4,7 @@ import { ThemeContext } from '../ThemeContext';
 function Header() {
   const { theme, changeTheme } = useContext(ThemeContext);
   
+  
   return (
     <div className='header'>
       <h2>devfinder</h2>

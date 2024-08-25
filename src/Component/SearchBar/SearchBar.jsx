@@ -4,7 +4,7 @@ import React, { useState,useEffect } from 'react';
 //import ThemeContext from '../ThemeContext';
 
 function SearchBar({ setUser }) { 
-    const [searchTerm, setSearchTerm] = useState("octocat");
+    const [searchTerm, setSearchTerm] = useState("abmanaf");
 
     const handleSearch = async (username) => {
         const userToSearch = username || searchTerm;
@@ -15,12 +15,12 @@ function SearchBar({ setUser }) {
             } catch (err) {
                 console.error("err");
                 alert('user does not exist')
-                setUser(octocat); 
+                //setUser(abmanaf); 
             }
         }
     };
     useEffect(() => {
-        handleSearch("octocat");
+        handleSearch();
       }, []);
 
     return (

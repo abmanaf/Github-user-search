@@ -10,6 +10,7 @@ function ThemeProvider({children}){
     const changeTheme = () => {
         setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
     }
+    
     useEffect(() => {
         document.body.classList = theme;
     }, [theme])

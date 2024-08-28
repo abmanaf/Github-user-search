@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useState,useEffect } from 'react';
-//import { useContext } from 'react';
 
 function SearchBar({ setUser }) { 
     const [searchTerm, setSearchTerm] = useState("abmanaf");
